@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đáp án Khóa VIP 90</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* HEADER */
+      header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        border-bottom: 3px solid #3498db;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8em;
+        }
+      }
+
+      /* TOOLBAR / NAVIGATION */
+      .toolbar {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: static;
+        z-index: 100;
+      }
+
+      .toolbar label {
+        display: block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1em;
+      }
+
+      .toolbar select {
+        padding: 10px 15px;
+        font-size: 1em;
+        border: 2px solid #3498db;
+        border-radius: 5px;
+        background-color: white;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 200px;
+      }
+
+      .toolbar select:hover {
+        border-color: #2980b9;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+      }
+
+      .toolbar select:focus {
+        outline: none;
+        box-shadow: 0 0 12px rgba(52, 152, 219, 0.5);
+      }
+
+      .toolbar-buttons {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .home-button {
+        background-color: #27ae60;
+        color: white;
+        border: 2px solid #27ae60;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .home-button:hover {
+        background-color: #229954;
+        border-color: #229954;
+        box-shadow: 0 0 8px rgba(39, 174, 96, 0.3);
+      }
+
+      .home-button:active {
+        transform: scale(0.98);
+      }
+
+      @media (max-width: 768px) {
+        .toolbar {
+          padding: 15px;
+        }
+
+        .toolbar select {
+          width: 100%;
+          max-width: 100%;
+          margin-top: 10px;
+          display: block;
+        }
+
+        .toolbar label {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .toolbar-buttons {
+          margin-top: 10px;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .home-button {
+          width: 100%;
+        }
+      }
+
+      /* CONTENT CONTAINER */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* WEEK CONTENT SECTION */
+      .week-section {
+        display: none;
+        animation: fadeIn 0.3s ease-in;
+      }
+
+      .week-section.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .week-banner {
+        background-color: #ecf0f1;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-left: 5px solid #3498db;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .week-banner img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .week-banner .banner-text {
+        font-size: 1.2em;
+        color: #2c3e50;
+        font-weight: 500;
+      }
+
+      .week-banner .banner-note {
+        font-size: 0.95em;
+        color: #7f8c8d;
+        margin-top: 10px;
+        font-style: italic;
+      }
+
+      .week-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .lesson-button {
+        background-color: white;
+        border: 2px solid #34495e;
+        color: #34495e;
+        padding: 18px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .lesson-button:hover {
+        background-color: #3498db;
+        color: white;
+        border-color: #3498db;
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+      }
+
+      .lesson-button:active {
+        transform: translateX(5px) translateY(1px);
+      }
+
+      /* MAIN CONTENT DISPLAY AREA */
+      .main-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        min-height: 200px;
+      }
+
+      .main-content h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .main-content p {
+        color: #7f8c8d;
+        line-height: 1.8;
+      }
+
+      /* VIDEO CONTAINER */
+      .video-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      /* TRANSLATION TOOL SECTION */
+      .translation-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .translation-section h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+      }
+
+      .translation-box {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+        border: 2px solid #ecf0f1;
+      }
+
+      .translation-box textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #bdc3c7;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.95em;
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .translation-box textarea:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+      }
+
+      .translation-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .translate-link-btn {
+        background-color: #3498db;
+        color: white;
+        border: 2px solid #3498db;
+        padding: 12px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .translate-link-btn:hover {
+        background-color: #2980b9;
+        border-color: #2980b9;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+      }
+
+      .clear-btn {
+        background-color: #95a5a6;
+        color: white;
+        border: 2px solid #95a5a6;
+        padding: 12px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .clear-btn:hover {
+        background-color: #7f8c8d;
+        border-color: #7f8c8d;
+      }
+
+      .info-text {
+        color: #7f8c8d;
+        font-size: 0.95em;
+        margin-top: 10px;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #34495e;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        border-top: 3px solid #3498db;
+      }
+
+      footer p {
+        margin: 10px 0;
+      }
+
+      footer a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* RESPONSIVE ADJUSTMENTS */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        .week-banner {
+          padding: 15px;
+          min-height: auto;
+        }
+
+        .lesson-button {
+          padding: 15px 15px;
+          font-size: 0.95em;
+        }
+
+        footer {
+          padding: 15px;
+        }
+
+        .translation-buttons {
+          flex-direction: column;
+        }
+
+        .translate-link-btn,
+        .clear-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Đáp án Khóa VIP 90</h1>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar-buttons">
+        <button class="home-button" onclick="goHome()">🏠 Trang Chủ</button>
+      </div>
+      <label for="week-selector">Chọn Tuần Học:</label>
+      <select id="week-selector" onchange="switchWeek(this.value)">
+        <option value="" disabled hidden selected>Chọn Tuần Học</option>
+        <option value="week1">Tuần 1</option>
+        <option value="week2">Tuần 2</option>
+        <option value="week3">Tuần 3</option>
+        <option value="week4">Tuần 4</option>
+        <option value="week5">Tuần 5</option>
+        <option value="week6">Tuần 6</option>
+        <option value="week7">Tuần 7</option>
+        <option value="week8">Tuần 8</option>
+        <option value="week9">Tuần 9</option>
+        <option value="week10">Tuần 10</option>
+        <option value="week11">Tuần 11</option>
+        <option value="week12">Tuần 12</option>
+        <option value="week13">Tuần 13</option>
+        <option value="week14">Tuần 14</option>
+      </select>
+    </div>
+
+    <div class="container">
+      <div id="week1" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 1 -->
+          <!-- <img src="path/to/week1-banner.jpg" alt="Tuần 1"> -->
+          <div class="banner-text">📚 Tuần 1 - Khóa VIP 90</div>
+          <div class="banner-note">Ghi chú lưu ý Tuần 1</div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="
+              loadAudio(
+                'tailieu/tuan1/Đọc-hiểu-vận-dung(buổi-1).mp4',
+                'Đọc hiểu tinh hoa-vận dụng cao(buổi 1)',
+              )
+            "
+          >
+            <!-- Thay 'lesson1-1.m4a' bằng đường dẫn file thực tế -->
+            Đọc hiểu tinh hoa-vận dụng cao(buổi 1)
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson1-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson1-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson1-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson1-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson1-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson1-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson1-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson1-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson1-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson1-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <div id="week2" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 2 -->
+          <!-- <img src="path/to/week2-banner.jpg" alt="Tuần 2"> -->
+          <div class="banner-text">📚 Tuần 2 - Khóa VIP 90</div>
+          <div class="banner-note">Ghi chú lưu ý Tuần 2</div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson2-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson2-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson2-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson2-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson2-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson2-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson2-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson2-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson2-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson2-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson2-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+      <div id="week3" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 3 -->
+          <!-- <img src="path/to/week3-banner.jpg" alt="Tuần 3"> -->
+          <div class="banner-text">📚 Tuần 3 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 3 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson3-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson3-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson3-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson3-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson3-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson3-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson3-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson3-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson3-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson3-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson3-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+      <div id="week4" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 4 -->
+          <!-- <img src="path/to/week4-banner.jpg" alt="Tuần 4"> -->
+          <div class="banner-text">📚 Tuần 4 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 4 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson4-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson4-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson4-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson4-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson4-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson4-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson4-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson4-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson4-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson4-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson4-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <div id="week5" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 5 -->
+          <!-- <img src="path/to/week5-banner.jpg" alt="Tuần 5"> -->
+          <div class="banner-text">📚 Tuần 5 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 5 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson5-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson5-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson5-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson5-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson5-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson5-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson5-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson5-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson5-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson5-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson5-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 6 -->
+      <div id="week6" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 6 -->
+          <!-- <img src="path/to/week6-banner.jpg" alt="Tuần 6"> -->
+          <div class="banner-text">📚 Tuần 6 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 6 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson6-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson6-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson6-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson6-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson6-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson6-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson6-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson6-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson6-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson6-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson6-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 7 -->
+      <div id="week7" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 7 -->
+          <!-- <img src="path/to/week7-banner.jpg" alt="Tuần 7"> -->
+          <div class="banner-text">📚 Tuần 7 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 7 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson7-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson7-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson7-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson7-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson7-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson7-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson7-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson7-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson7-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson7-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson7-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 8 -->
+      <div id="week8" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 8 -->
+          <!-- <img src="path/to/week8-banner.jpg" alt="Tuần 8"> -->
+          <div class="banner-text">📚 Tuần 8 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 8 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson8-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson8-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson8-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson8-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson8-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson8-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson8-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson8-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson8-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson8-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson8-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 9 -->
+      <div id="week9" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 9 -->
+          <!-- <img src="path/to/week9-banner.jpg" alt="Tuần 9"> -->
+          <div class="banner-text">📚 Tuần 9 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 9 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson9-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson9-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson9-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson9-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson9-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson9-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson9-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson9-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson9-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson9-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson9-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 10 -->
+      <div id="week10" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 10 -->
+          <!-- <img src="path/to/week10-banner.jpg" alt="Tuần 10"> -->
+          <div class="banner-text">📚 Tuần 10 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 10 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson10-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson10-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson10-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson10-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson10-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson10-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson10-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson10-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson10-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson10-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson10-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 11 -->
+      <div id="week11" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 11 -->
+          <!-- <img src="path/to/week11-banner.jpg" alt="Tuần 11"> -->
+          <div class="banner-text">📚 Tuần 11 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 11 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson11-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson11-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson11-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson11-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson11-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson11-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson11-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson11-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson11-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson11-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson11-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 12 -->
+      <div id="week12" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 12 -->
+          <!-- <img src="path/to/week12-banner.jpg" alt="Tuần 12"> -->
+          <div class="banner-text">📚 Tuần 12 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 12 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson12-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson12-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson12-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson12-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson12-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson12-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson12-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson12-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson12-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson12-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson12-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <!-- WEEK 13 -->
+      <div id="week13" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 13 -->
+          <!-- <img src="path/to/week13-banner.jpg" alt="Tuần 13"> -->
+          <div class="banner-text">📚 Tuần 13 - Khóa VIP 90</div>
+          <div class="banner-note">
+            Ghi chú: Thêm nội dung lưu ý cho Tuần 13 tại đây
+          </div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson13-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson13-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson13-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson13-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson13-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson13-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson13-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson13-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson13-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson13-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson13-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <div id="week14" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 14 -->
+          <!-- <img src="path/to/week14-banner.jpg" alt="Tuần 14"> -->
+          <div class="banner-text">📚 Tuần 14 - Khóa VIP 90</div>
+          <div class="banner-note">Ghi chú lưu ý</div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-1.m4a', 'Bài 1')"
+          >
+            <!-- Thay 'lesson14-1.m4a' bằng đường dẫn file thực tế -->
+            Bài 1
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-2.m4a', 'Bài 2')"
+          >
+            <!-- Thay 'lesson14-2.m4a' bằng đường dẫn file thực tế -->
+            Bài 2
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-3.m4a', 'Bài 3')"
+          >
+            <!-- Thay 'lesson14-3.m4a' bằng đường dẫn file thực tế -->
+            Bài 3
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-4.m4a', 'Bài 4')"
+          >
+            <!-- Thay 'lesson14-4.m4a' bằng đường dẫn file thực tế -->
+            Bài 4
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-5.m4a', 'Bài 5')"
+          >
+            <!-- Thay 'lesson14-5.m4a' bằng đường dẫn file thực tế -->
+            Bài 5
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-6.m4a', 'Bài 6')"
+          >
+            <!-- Thay 'lesson14-6.m4a' bằng đường dẫn file thực tế -->
+            Bài 6
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-7.m4a', 'Bài 7')"
+          >
+            <!-- Thay 'lesson14-7.m4a' bằng đường dẫn file thực tế -->
+            Bài 7
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-8.m4a', 'Bài 8')"
+          >
+            <!-- Thay 'lesson14-8.m4a' bằng đường dẫn file thực tế -->
+            Bài 8
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-9.m4a', 'Bài 9')"
+          >
+            <!-- Thay 'lesson14-9.m4a' bằng đường dẫn file thực tế -->
+            Bài 9
+          </button>
+          <button
+            class="lesson-button"
+            onclick="loadAudio('lesson14-10.m4a', 'Bài 10')"
+          >
+            <!-- Thay 'lesson14-10.m4a' bằng đường dẫn file thực tế -->
+            Bài 10
+          </button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <h3 id="content-title">Khu vực hiển thị nội dung</h3>
+        <p id="content-text">
+          Chọn một tuần học từ menu thả xuống bên trên, sau đó nhấn vào một bài
+          để nghe file audio hoặc xem nội dung.
+        </p>
+        <!-- Khu vực hiển thị nội dung file - có thể dùng video player -->
+        <div class="video-container">
+          <video
+            id="audio-player"
+            style="width: 100%; margin-top: 20px; max-height: 500px"
+            controls
+          >
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </div>
+      </div>
+
+      <div class="translation-section">
+        <h3>🌐 Công cụ dịch thuật (DeepL: English → Tiếng Việt)</h3>
+        <!-- Dán link công cụ dịch thuật vào đây - ví dụ: Google Translate, DeepL -->
+        <div class="translation-box">
+          <textarea
+            id="source-text"
+            placeholder="Nhập hoặc dán text tiếng Anh cần dịch..."
+          ></textarea>
+          <div class="translation-buttons">
+            <button class="translate-link-btn" onclick="translateWithDeepL()">
+              🔄 Dịch với DeepL
+            </button>
+            <button class="clear-btn" onclick="clearTranslation()">
+              🗑️ Xóa
+            </button>
+          </div>
+          <p class="info-text">
+            💡 Nhấn nút để dịch text sang tiếng Việt qua DeepL (chất lượng cao)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Liên hệ:</strong></p>
+      <!-- Thêm email / mạng xã hội / số điện thoại tại đây -->
+      <p>
+        📧 Email: <a href="mailto:contact@example.com">contact@example.com</a>
+      </p>
+      <p>📱 Điện thoại: +84 XXX XXX XXX</p>
+      <p style="margin-top: 15px; font-size: 0.9em; color: #bdc3c7">
+        Created with ❤️ | © 2026 - Khóa VIP 90
+      </p>
+    </footer>
+
+    <script>
+      function switchWeek(weekId) {
+        if (!weekId) return;
+
+        const weekSections = document.querySelectorAll(".week-section");
+        weekSections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const selectedWeek = document.getElementById(weekId);
+        if (selectedWeek) {
+          selectedWeek.classList.add("active");
+        }
+
+        resetContent();
+      }
+
+      function loadAudio(audioFile, lessonName) {
+        const audioPlayer = document.getElementById("audio-player");
+        const contentTitle = document.getElementById("content-title");
+        const contentText = document.getElementById("content-text");
+
+        contentTitle.textContent = "▶️ " + lessonName;
+        contentText.innerHTML = `
+                <strong>📹 Đang phát:</strong> ${audioFile}<br>
+                <strong>💡 Hướng dẫn:</strong> Dùng nút Play bên dưới để phát video (có thể điều chỉnh âm lượng và toàn màn hình)
+            `;
+
+        audioPlayer.src = audioFile;
+
+        setTimeout(() => {
+          document
+            .querySelector(".main-content")
+            .scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+
+      function resetContent() {
+        const contentTitle = document.getElementById("content-title");
+        const contentText = document.getElementById("content-text");
+        const audioPlayer = document.getElementById("audio-player");
+
+        contentTitle.textContent = "Khu vực hiển thị nội dung";
+        contentText.textContent =
+          "Chọn một tuần học từ menu thả xuống bên trên, sau đó nhấn vào một bài để nghe file audio hoặc xem nội dung.";
+        audioPlayer.src = "";
+        audioPlayer.pause();
+      }
+
+      function goHome() {
+        document.getElementById("week-selector").value = "";
+
+        const weekSections = document.querySelectorAll(".week-section");
+        weekSections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        resetContent();
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function translateWithDeepL() {
+        const sourceText = document.getElementById("source-text").value.trim();
+
+        if (!sourceText) {
+          alert("❌ Vui lòng nhập text cần dịch");
+          return;
+        }
+
+        const url = encodeURI(
+          `https://www.deepl.com/translator#en/vi/${sourceText}`,
+        );
+        window.open(url, "_blank");
+      }
+
+      function clearTranslation() {
+        document.getElementById("source-text").value = "";
+      }
+
+      // Auto-load on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Don't auto-load, let user select
+      });
+    </script>
+  </body>
+</html>
