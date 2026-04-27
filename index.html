@@ -414,6 +414,7 @@
       <label for="week-selector">Chọn Tuần Học:</label>
       <select id="week-selector" onchange="switchWeek(this.value)">
         <option value="" disabled hidden selected>Chọn Tuần Học</option>
+        <option value="C1-C2">C1-C2</option>
         <option value="week1">Tuần 1</option>
         <option value="week2">Tuần 2</option>
         <option value="week3">Tuần 3</option>
@@ -430,14 +431,37 @@
         <option value="week14">Tuần 14</option>
       </select>
     </div>
-
+    <div class="container">
+      <div id="C1-C2" class="week-section">
+        <div class="week-banner">
+          <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 1 -->
+          <!-- <img src="path/to/week1-banner.jpg" alt="Tuần 1"> -->
+          <div class="banner-text">📚 C1-C2 - Khóa VIP 90</div>
+          <div class="banner-note">Ghi chú</div>
+        </div>
+        <div class="week-buttons">
+          <button
+            class="lesson-button"
+            onclick="
+              loadAudio(
+                'tailieu/tuan1/Đọc-hiểu-vận-dung(buổi-1).mp4',
+                'Tinh hoa đọc hiểu-nâng cao(buổi 1)',
+              )
+            "
+          >
+            <!-- Thay 'lesson1-1.m4a' bằng đường dẫn file thực tế -->
+            Tinh hoa đọc hiểu-đề nâng cao(buổi 1)
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div id="week1" class="week-section">
         <div class="week-banner">
           <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 1 -->
           <!-- <img src="path/to/week1-banner.jpg" alt="Tuần 1"> -->
           <div class="banner-text">📚 Tuần 1 - Khóa VIP 90</div>
-          <div class="banner-note">Ghi chú lưu ý Tuần 1</div>
+          <div class="banner-note">Ghi chú</div>
         </div>
         <div class="week-buttons">
           <button
@@ -472,7 +496,7 @@
           <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 2 -->
           <!-- <img src="path/to/week2-banner.jpg" alt="Tuần 2"> -->
           <div class="banner-text">📚 Tuần 2 - Khóa VIP 90</div>
-          <div class="banner-note">Ghi chú lưu ý Tuần 2</div>
+          <div class="banner-note">Ghi chú</div>
         </div>
         <div class="week-buttons">
           <button
@@ -557,9 +581,7 @@
           <!-- Thay link ảnh dưới đây bằng ảnh banner thực tế cho Tuần 3 -->
           <!-- <img src="path/to/week3-banner.jpg" alt="Tuần 3"> -->
           <div class="banner-text">📚 Tuần 3 - Khóa VIP 90</div>
-          <div class="banner-note">
-            Ghi chú: Thêm nội dung lưu ý cho Tuần 3 tại đây
-          </div>
+          <div class="banner-note">Ghi chú</div>
         </div>
         <div class="week-buttons">
           <button
@@ -682,7 +704,7 @@
             class="lesson-button"
             onclick="
               loadAudio(
-                '/tailieu/tuan4/Cụm-động-từ-sẽ-xuất-hiện-trong-đề-thi-(Buổi-3)-Đề-Nâng-cao.mp4',
+                'tailieu/tuan4/Cụm-động-từ-sẽ-xuất-hiện-trong-đề-thi-(Buổi-3)-Đề-Nâng-cao.mp4',
                 'Cụm động từ sẽ xuất hiện trong đề thi (Buổi 3) - Đề nâng cao',
               )
             "
@@ -742,7 +764,7 @@
             class="lesson-button"
             onclick="
               loadAudio(
-                'tailieu/tuan4/Dự-đoán-đặc-biệt-Cụm-động-từ-sẽ-xuất-hiện-trong-đề-thi-(Buổi-4)-Đề-vận-dụng.',
+                'tailieu/tuan4/Dự-đoán-đặc-biệt-Cụm-động-từ-sẽ-xuất-hiện-trong-đề-thi-(Buổi-4)-Đề-vận-dụng.mp4',
                 'Dự đoán đặc biệt cụm động từ sẽ xuất hiện (buổi 4)-Vận dụng',
               )
             "
@@ -824,7 +846,7 @@
             class="lesson-button"
             onclick="
               loadAudio(
-                'lesson5-3.m4a',
+                'tailieu/tuan5/Học-tủ-bộ-từ-vựng-trọng-điểm-dễ-thi-nhất-(Buổi-5)-Đề-vận-dụng.mp4',
                 'bộ từ vựng trọng điểm - dễ thi nhất (Buổi 5) - Đề vận dụng',
               )
             "
@@ -836,7 +858,7 @@
             class="lesson-button"
             onclick="
               loadAudio(
-                'tailieu/tuan5/Bộ-từ-vựng-trọng-điểm-(Buổi-5)-Đề-Nâng-cao.mp4',
+                'tailieu/tuan5/Học-tủ-bộ-từ-vựng-trọng-điểm-dễ-thi-nhất-(Buổi-5)-Đề-Nâng-cao.mp4',
                 'bộ từ vựng trọng điểm - dễ thi nhất (Buổi 5) - Đề nâng cao',
               )
             "
@@ -870,13 +892,31 @@
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson5-7.m4a', 'Bài 7')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan5/Tinh-hoa-Đọc-hiểu-(Buổi-9)-Đề-vận-dụng.mp4',
+                'Tinh hoa Đọc hiểu (Buổi 9) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson5-7.m4a' bằng đường dẫn file thực tế -->
-            Bài 7
+            Tinh hoa Đọc hiểu (Buổi 9) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
+            onclick="
+              loadAudio(
+                'tailieu/tuan5/Tinh-hoa-Đọc-hiểu-(Buổi-9)-Đề-Nâng-cao.mp4',
+                'Tinh hoa Đọc hiểu (Buổi 9) - Đề Nâng cao',
+              )
+            "
+          >
+            <!-- Thay 'lesson5-7.m4a' bằng đường dẫn file thực tế -->
+            Tinh hoa Đọc hiểu (Buổi 9) - Đề Nâng cao
+          </button>
+          <button
+            class="lesson-button"
+            
             onclick="
               loadAudio(
                 'tailieu/tuan5/Mệnh-đề-quan-hệ-(Buổi-1)-Đề-Vận-Dụng.mp4',
@@ -884,6 +924,7 @@
               )
             "
           >
+          
             <!-- Thay 'lesson5-8.m4a' bằng đường dẫn file thực tế -->
             Mệnh đề quan hệ (Buổi 1) - Đề vận dụng
           </button>
@@ -901,10 +942,15 @@
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson5-10.m4a', 'Bài 10')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan5/Đề-tinh-hoa-Dự-đoán-đặc-biệt-kỳ-thi-THPT-2026-Đề-số-01.mp4',
+                'Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 01',
+              )
+            "
           >
             <!-- Thay 'lesson5-10.m4a' bằng đường dẫn file thực tế -->
-            Bài 10
+            Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 01
           </button>
         </div>
       </div>
@@ -922,73 +968,101 @@
         <div class="week-buttons">
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-1.m4a', 'Bài 1')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Mệnh-đề-quan-hệ-(Buổi-2)-Đề-vận-dụng.mp4',
+                'Mệnh đề quan hệ (Buổi 2) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson6-1.m4a' bằng đường dẫn file thực tế -->
-            Bài 1
+            Mệnh đề quan hệ (Buổi 2) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-2.m4a', 'Bài 2')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Mệnh-đề-quan-hệ-(Buổi-2)-Đề-Nâng-cao.mp4',
+                'Mệnh đề quan hệ (Buổi 2) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson6-2.m4a' bằng đường dẫn file thực tế -->
-            Bài 2
+            Mệnh đề quan hệ (Buổi 2) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-3.m4a', 'Bài 3')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Học-tủ-bộ-từ-vựng-trọng-điểm-dễ-thi-nhất-(Buổi-6)-Đề-vận-dụng.mp4',
+                'Học tủ bộ từ vựng trọng điểm - dễ thi nhất (Buổi 6) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson6-3.m4a' bằng đường dẫn file thực tế -->
-            Bài 3
+            Học tủ bộ từ vựng trọng điểm - dễ thi nhất (Buổi 6) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-4.m4a', 'Bài 4')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Học-tủ-bộ-từ-vựng-trọng-điểm-dễ-thi-nhất-(Buổi-6)-Đề-Nâng-cao.mp4',
+                'Học tủ bộ từ vựng trọng điểm - dễ thi nhất (Buổi 6) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson6-4.m4a' bằng đường dẫn file thực tế -->
-            Bài 4
+            Học tủ bộ từ vựng trọng điểm - dễ thi nhất (Buổi 6) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-5.m4a', 'Bài 5')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Rút-gọn-mệnh-đề-quan-hệ-(Buổi-1)-Đề-vận-dụng.mp4',
+                'Rút gọn mệnh đề quan hệ (Buổi 1) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson6-5.m4a' bằng đường dẫn file thực tế -->
-            Bài 5
+            Rút gọn mệnh đề quan hệ (Buổi 1) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-6.m4a', 'Bài 6')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Rút-gọn-mệnh-đề-quan-hệ-(Buổi-1)-Đề-Nâng-cao.mp4',
+                'Rút gọn mệnh đề quan hệ (Buổi 1) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson6-6.m4a' bằng đường dẫn file thực tế -->
-            Bài 6
+            Rút gọn mệnh đề quan hệ (Buổi 1) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
             onclick="loadAudio('lesson6-7.m4a', 'Bài 7')"
           >
             <!-- Thay 'lesson6-7.m4a' bằng đường dẫn file thực tế -->
-            Bài 7
+            Tinh hoa Đọc hiểu (Buổi 10) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
             onclick="loadAudio('lesson6-8.m4a', 'Bài 8')"
           >
             <!-- Thay 'lesson6-8.m4a' bằng đường dẫn file thực tế -->
-            Bài 8
+            Tinh hoa Đọc hiểu (Buổi 10) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson6-9.m4a', 'Bài 9')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan6/Đề-tinh-hoa-Dự-đoán-đặc-biệt-kỳ-thi-THPT-2026-Đề-số-02.mp4',
+                'Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 02',
+              )
+            "
           >
             <!-- Thay 'lesson6-9.m4a' bằng đường dẫn file thực tế -->
-            Bài 9
-          </button>
-          <button
-            class="lesson-button"
-            onclick="loadAudio('lesson6-10.m4a', 'Bài 10')"
-          >
-            <!-- Thay 'lesson6-10.m4a' bằng đường dẫn file thực tế -->
-            Bài 10
+             Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 02
           </button>
         </div>
       </div>
@@ -1000,79 +1074,141 @@
           <!-- <img src="path/to/week7-banner.jpg" alt="Tuần 7"> -->
           <div class="banner-text">📚 Tuần 7 - Khóa VIP 90</div>
           <div class="banner-note">
-            Ghi chú: Thêm nội dung lưu ý cho Tuần 7 tại đây
+            Ghi chú:
           </div>
         </div>
         <div class="week-buttons">
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-1.m4a', 'Bài 1')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Các-loại-mệnh-đề-(Buổi-1)-Đề-vận-dụng.mp4',
+                'Các loại mệnh đề (Buổi 1) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson7-1.m4a' bằng đường dẫn file thực tế -->
-            Bài 1
+            Các loại mệnh đề (Buổi 1) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-2.m4a', 'Bài 2')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Các-loại-mệnh-đề-(Buổi-1)-Đề-Nâng-cao.mp4',
+                'Các loại mệnh đề (Buổi 1) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson7-2.m4a' bằng đường dẫn file thực tế -->
-            Bài 2
+            Các loại mệnh đề (Buổi 1) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-3.m4a', 'Bài 3')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Dự-đoán-đặc-biệt-Collocation-sẽ-xuất-hiện-trong-đề-thi-(Buổi-1)-Đề-vận-dụng.mp4',
+                'Dự đoán đặc biệt Collocation sẽ xuất hiện trong đề thi (Buổi 1) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson7-3.m4a' bằng đường dẫn file thực tế -->
-            Bài 3
+            Dự đoán đặc biệt Collocation sẽ xuất hiện trong đề thi (Buổi 1) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-4.m4a', 'Bài 4')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Dự-đoán-đặc-biệt-Collocation-sẽ-xuất-hiện-trong-đề-thi-(Buổi-1)-Đề-Nâng-cao.mp4',
+                'Dự đoán đặc biệt Collocation sẽ xuất hiện trong đề thi (Buổi 1) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson7-4.m4a' bằng đường dẫn file thực tế -->
-            Bài 4
+            Dự đoán đặc biệt Collocation sẽ xuất hiện trong đề thi (Buổi 1) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-5.m4a', 'Bài 5')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Các-loại-mệnh-đề-(Buổi-2)-Đề-vận-dụng.mp4',
+                'Các loại mệnh đề (Buổi 2) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson7-5.m4a' bằng đường dẫn file thực tế -->
-            Bài 5
+            Các loại mệnh đề (Buổi 2) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-6.m4a', 'Bài 6')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Các-loại-mệnh-đề-(Buổi-2)-Đề-Nâng-cao.mp4',
+                'Các loại mệnh đề (Buổi 2) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson7-6.m4a' bằng đường dẫn file thực tế -->
-            Bài 6
+            Các loại mệnh đề (Buổi 2) - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-7.m4a', 'Bài 7')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Phép-song-hành-Đề-vận-dụng.mp4',
+                'Phép song hành - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson7-7.m4a' bằng đường dẫn file thực tế -->
-            Bài 7
+            Phép song hành - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-8.m4a', 'Bài 8')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Phép-song-hành-Đề-Nâng-cao.mp4',
+                'Phép song hành - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson7-8.m4a' bằng đường dẫn file thực tế -->
-            Bài 8
+            Phép song hành - Đề Nâng cao
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-9.m4a', 'Bài 9')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Tinh-hoa-Đọc-hiểu-(Buổi-11)-Đề-vận-dụng.mp4',
+                'Tinh hoa Đọc hiểu (Buổi 11) - Đề vận dụng',
+              )
+            "
           >
             <!-- Thay 'lesson7-9.m4a' bằng đường dẫn file thực tế -->
-            Bài 9
+            Tinh hoa Đọc hiểu (Buổi 11) - Đề vận dụng
           </button>
           <button
             class="lesson-button"
-            onclick="loadAudio('lesson7-10.m4a', 'Bài 10')"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Tinh-hoa-Đọc-hiểu-(Buổi-11)-Đề-Nâng-cao.mp4',
+                'Tinh hoa Đọc hiểu (Buổi 11) - Đề Nâng cao',
+              )
+            "
           >
             <!-- Thay 'lesson7-10.m4a' bằng đường dẫn file thực tế -->
-            Bài 10
+            Tinh hoa Đọc hiểu (Buổi 11) - Đề Nâng cao
+          </button>
+          <button
+            class="lesson-button"
+            onclick="
+              loadAudio(
+                'tailieu/tuan7/Đề-tinh-hoa-Dự-đoán-đặc-biệt-kỳ-thi-THPT-2026-Đề-số-03.mp4',
+                'Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 03',
+              )
+            "
+          >
+            <!-- Thay 'lesson7-10.m4a' bằng đường dẫn file thực tế -->
+            Đề tinh hoa - Dự đoán đặc biệt kỳ thi THPT 2026: Đề số 03
           </button>
         </div>
       </div>
